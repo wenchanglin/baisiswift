@@ -12,6 +12,7 @@
 		55216B1F1F4AB19700E8E9B4 /* TGRefreshOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 55216B1A1F4AB19700E8E9B4 /* TGRefreshOC.m */; };
 		55216B201F4AB19700E8E9B4 /* UIScrollView+TGRefreshOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 55216B1C1F4AB19700E8E9B4 /* UIScrollView+TGRefreshOC.m */; };
 		55216B221F4AB6B600E8E9B4 /* TGLookingAroundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55216B211F4AB6B600E8E9B4 /* TGLookingAroundCell.swift */; };
+		552D14F51F5E7DA800B7A18E /* LXCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D14F41F5E7DA800B7A18E /* LXCircle.m */; };
 		554CDD051F42DB5800B2AC5D /* TGCommentNewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554CDD041F42DB5800B2AC5D /* TGCommentNewVC.swift */; };
 		554CDD121F42E87C00B2AC5D /* arrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 554CDD0A1F42E87C00B2AC5D /* arrow@3x.png */; };
 		554CDD131F42E87C00B2AC5D /* SKScNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554CDD0C1F42E87C00B2AC5D /* SKScNavViewController.swift */; };
@@ -19,8 +20,6 @@
 		554CDD151F42E87C00B2AC5D /* SKLaunchMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554CDD0F1F42E87C00B2AC5D /* SKLaunchMenu.swift */; };
 		554CDD161F42E87C00B2AC5D /* SKLaunchMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554CDD101F42E87C00B2AC5D /* SKLaunchMenuItem.swift */; };
 		554CDD171F42E87C00B2AC5D /* SKScNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554CDD111F42E87C00B2AC5D /* SKScNavBar.swift */; };
-		55561B8F1F3D530600770940 /* TGSeeBigPicNewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 55561B8D1F3D530600770940 /* TGSeeBigPicNewVC.m */; };
-		55561B901F3D530600770940 /* TGSeeBigPicNewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55561B8E1F3D530600770940 /* TGSeeBigPicNewVC.xib */; };
 		55561B931F3D9B6200770940 /* TGTopCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55561B921F3D9B6200770940 /* TGTopCommentCell.swift */; };
 		55562CB01F3BEEB5005857BC /* NetTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55562CAF1F3BEEB5005857BC /* NetTool.swift */; };
 		55562CBB1F3BF639005857BC /* TGCommentNewM.m in Sources */ = {isa = PBXBuildFile; fileRef = 55562CB41F3BF639005857BC /* TGCommentNewM.m */; };
@@ -32,7 +31,6 @@
 		55562CCE1F3C3554005857BC /* TGTopicM.m in Sources */ = {isa = PBXBuildFile; fileRef = 55562CCA1F3C3554005857BC /* TGTopicM.m */; };
 		55562CCF1F3C3554005857BC /* TGUserM.m in Sources */ = {isa = PBXBuildFile; fileRef = 55562CCC1F3C3554005857BC /* TGUserM.m */; };
 		55562CD21F3C4B00005857BC /* TGTopicNewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55562CD11F3C4B00005857BC /* TGTopicNewCell.swift */; };
-		55562CD41F3C4C37005857BC /* TGPicNewV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55562CD31F3C4C37005857BC /* TGPicNewV.swift */; };
 		55562CD61F3C5353005857BC /* TGVoiceNewV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55562CD51F3C5353005857BC /* TGVoiceNewV.swift */; };
 		55562CD81F3C5425005857BC /* TGVideoNewV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55562CD71F3C5425005857BC /* TGVideoNewV.swift */; };
 		555EC3F41F56870500766DCE /* TGNewPicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555EC3F31F56870500766DCE /* TGNewPicVC.swift */; };
@@ -162,6 +160,8 @@
 		55216B1B1F4AB19700E8E9B4 /* UIScrollView+TGRefreshOC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TGRefreshOC.h"; sourceTree = "<group>"; };
 		55216B1C1F4AB19700E8E9B4 /* UIScrollView+TGRefreshOC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TGRefreshOC.m"; sourceTree = "<group>"; };
 		55216B211F4AB6B600E8E9B4 /* TGLookingAroundCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TGLookingAroundCell.swift; sourceTree = "<group>"; };
+		552D14F31F5E7DA800B7A18E /* LXCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXCircle.h; sourceTree = "<group>"; };
+		552D14F41F5E7DA800B7A18E /* LXCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXCircle.m; sourceTree = "<group>"; };
 		554CDD041F42DB5800B2AC5D /* TGCommentNewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TGCommentNewVC.swift; sourceTree = "<group>"; };
 		554CDD0A1F42E87C00B2AC5D /* arrow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@3x.png"; sourceTree = "<group>"; };
 		554CDD0C1F42E87C00B2AC5D /* SKScNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKScNavViewController.swift; sourceTree = "<group>"; };
@@ -169,9 +169,6 @@
 		554CDD0F1F42E87C00B2AC5D /* SKLaunchMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKLaunchMenu.swift; sourceTree = "<group>"; };
 		554CDD101F42E87C00B2AC5D /* SKLaunchMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKLaunchMenuItem.swift; sourceTree = "<group>"; };
 		554CDD111F42E87C00B2AC5D /* SKScNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKScNavBar.swift; sourceTree = "<group>"; };
-		55561B8C1F3D530600770940 /* TGSeeBigPicNewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGSeeBigPicNewVC.h; sourceTree = "<group>"; };
-		55561B8D1F3D530600770940 /* TGSeeBigPicNewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGSeeBigPicNewVC.m; sourceTree = "<group>"; };
-		55561B8E1F3D530600770940 /* TGSeeBigPicNewVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGSeeBigPicNewVC.xib; sourceTree = "<group>"; };
 		55561B921F3D9B6200770940 /* TGTopCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TGTopCommentCell.swift; sourceTree = "<group>"; };
 		55562CAF1F3BEEB5005857BC /* NetTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetTool.swift; sourceTree = "<group>"; };
 		55562CB11F3BF639005857BC /* HeaderBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderBridge.h; sourceTree = "<group>"; };
@@ -192,7 +189,6 @@
 		55562CCB1F3C3554005857BC /* TGUserM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGUserM.h; sourceTree = "<group>"; };
 		55562CCC1F3C3554005857BC /* TGUserM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGUserM.m; sourceTree = "<group>"; };
 		55562CD11F3C4B00005857BC /* TGTopicNewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TGTopicNewCell.swift; sourceTree = "<group>"; };
-		55562CD31F3C4C37005857BC /* TGPicNewV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TGPicNewV.swift; sourceTree = "<group>"; };
 		55562CD51F3C5353005857BC /* TGVoiceNewV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TGVoiceNewV.swift; sourceTree = "<group>"; };
 		55562CD71F3C5425005857BC /* TGVideoNewV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TGVideoNewV.swift; sourceTree = "<group>"; };
 		555EC3F31F56870500766DCE /* TGNewPicVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TGNewPicVC.swift; sourceTree = "<group>"; };
@@ -423,6 +419,15 @@
 			path = TGRefreshOC;
 			sourceTree = "<group>";
 		};
+		552D14F21F5E7DA800B7A18E /* 圆弧进度2 */ = {
+			isa = PBXGroup;
+			children = (
+				552D14F31F5E7DA800B7A18E /* LXCircle.h */,
+				552D14F41F5E7DA800B7A18E /* LXCircle.m */,
+			);
+			path = "圆弧进度2";
+			sourceTree = "<group>";
+		};
 		554CDD061F42DB5E00B2AC5D /* 精华-推荐-二级VC */ = {
 			isa = PBXGroup;
 			children = (
@@ -460,16 +465,6 @@
 				554CDD111F42E87C00B2AC5D /* SKScNavBar.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		55561B8B1F3D530600770940 /* seeBigPic */ = {
-			isa = PBXGroup;
-			children = (
-				55561B8C1F3D530600770940 /* TGSeeBigPicNewVC.h */,
-				55561B8D1F3D530600770940 /* TGSeeBigPicNewVC.m */,
-				55561B8E1F3D530600770940 /* TGSeeBigPicNewVC.xib */,
-			);
-			path = seeBigPic;
 			sourceTree = "<group>";
 		};
 		55561B911F3D9B4500770940 /* 精华评论cell */ = {
@@ -521,12 +516,10 @@
 		55562CD01F3C4AAC005857BC /* 精华-推荐View */ = {
 			isa = PBXGroup;
 			children = (
-				55561B8B1F3D530600770940 /* seeBigPic */,
 				55561B911F3D9B4500770940 /* 精华评论cell */,
 				55562CD11F3C4B00005857BC /* TGTopicNewCell.swift */,
 				55562CD51F3C5353005857BC /* TGVoiceNewV.swift */,
 				55562CD71F3C5425005857BC /* TGVideoNewV.swift */,
-				55562CD31F3C4C37005857BC /* TGPicNewV.swift */,
 			);
 			name = "精华-推荐View";
 			sourceTree = "<group>";
@@ -744,6 +737,7 @@
 				5577FC4E1F4FB502004FCBCC /* ceShiModel.h */,
 				5577FC4F1F4FB502004FCBCC /* ceShiModel.m */,
 				556C71141F4E651A0000FCB8 /* QQTableViewCell.swift */,
+				552D14F21F5E7DA800B7A18E /* 圆弧进度2 */,
 				5565AE821F54F7500032AD42 /* UIImageViewPlayGIF */,
 				558EF3A11F53FD940017D366 /* SDPhotoBrowser */,
 				558EF3811F53F1BF0017D366 /* AsyncImageView */,
@@ -993,7 +987,6 @@
 				556742B41F3AA60900057642 /* Assets.xcassets in Resources */,
 				556742F91F3AB75600057642 /* TGAddToolBar.xib in Resources */,
 				5567435D1F3B00FC00057642 /* cancle_icon@3x.png in Resources */,
-				55561B901F3D530600770940 /* TGSeeBigPicNewVC.xib in Resources */,
 				556742B21F3AA60900057642 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1090,7 +1083,6 @@
 				55562CBD1F3BF639005857BC /* TGUserNewM.m in Sources */,
 				5571F85E1F4D566500743E05 /* TGNewestSoundsVC.swift in Sources */,
 				556C710A1F4E5EEB0000FCB8 /* CeShi.swift in Sources */,
-				55561B8F1F3D530600770940 /* TGSeeBigPicNewVC.m in Sources */,
 				556742E01F3AACA800057642 /* TGAdModel.swift in Sources */,
 				5571F8621F4D6CA100743E05 /* TGLoginRegisterVC.swift in Sources */,
 				556743601F3B00FC00057642 /* PopMenuModel.m in Sources */,
@@ -1153,6 +1145,7 @@
 				556743111F3AD70300057642 /* TGMoreCell.m in Sources */,
 				558EF3AB1F53FD940017D366 /* SDWaitingView.m in Sources */,
 				556742DE1F3AAB4E00057642 /* constantHeader.swift in Sources */,
+				552D14F51F5E7DA800B7A18E /* LXCircle.m in Sources */,
 				5567433B1F3ADAF700057642 /* UIView+frame.m in Sources */,
 				5571F85C1F4D565B00743E05 /* TGNewestGameVC.swift in Sources */,
 				5567436F1F3B0CAD00057642 /* TGJokesVC.swift in Sources */,
@@ -1165,7 +1158,6 @@
 				5565AE881F54F7500032AD42 /* YFGIFImageView.m in Sources */,
 				556743771F3B0CD300057642 /* TGSocietyVC.swift in Sources */,
 				556742FE1F3AB75600057642 /* TGTagTextField.m in Sources */,
-				55562CD41F3C4C37005857BC /* TGPicNewV.swift in Sources */,
 				556743181F3AD70300057642 /* TGShowMoreVC.m in Sources */,
 				55561B931F3D9B6200770940 /* TGTopCommentCell.swift in Sources */,
 				556742FA1F3AB75600057642 /* TGPlaceholderTextV.m in Sources */,

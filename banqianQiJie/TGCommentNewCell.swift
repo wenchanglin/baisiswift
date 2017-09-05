@@ -86,6 +86,7 @@ class TGCommentNewCell: UITableViewCell,WMPlayerDelegate {
             {
                 
                 imageV = AsyncImageView()
+                imageV.contentMode = .scaleAspectFill
                 AsyncImageLoader.shared().cancelLoadingImages(forTarget: imageV)
                 imageV.imageURL = URL(string:commentM.image)
                 self.contentView.addSubview(imageV)

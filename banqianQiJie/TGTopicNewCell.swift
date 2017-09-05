@@ -18,9 +18,17 @@ class TGTopicNewCell: UITableViewCell {
     var moreBtn:UIButton!
     var topCommentTableV:UITableView!
     var coverBtn:UIButton!
-    var picV:TGPicNewV!
+    var picV:AsyncImageView!
     var voiceV:TGVoiceNewV!
     var videoV:TGVideoNewV!
+    func seeBigPic()
+    {
+        let photos = SDPhotoBrowser()
+        photos.imageCount = 1
+        photos.currentImageIndex = 0
+        photos.delegate = self
+        photos.show()
+    }
     var topic:ceShiModel!
     {
         didSet {
@@ -30,10 +38,23 @@ class TGTopicNewCell: UITableViewCell {
                 nameLabel.text = topic.u.name
                 commentLabel.text = topic.text
                 passtimeLabel.text = topic.passtime
-                self.picV = TGPicNewV()
-                self.picV.tgtopPicModel = topic
+                self.picV = AsyncImageView()
+                AsyncImageLoader.shared().cancelLoadingImages(forTarget: picV)
+                picV.imageURL = URL(string:self.topic.image)
+                picV.layer.cornerRadius = 5
+                picV.layer.borderWidth = 2
+                picV.contentMode = .scaleAspectFill
+                picV.layer.masksToBounds = true
+                picV.layer.borderColor = UIColor.darkGray.cgColor
+                picV.isUserInteractionEnabled = true
+                picV.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(TGTopicNewCell.seeBigPic)))
                 self.contentView.addSubview(picV)
-                self.picV.frame = self.topic.middleFrame
+                picV.mas_makeConstraints { [weak self](make) in
+                    make?.top.equalTo()(self?.commentLabel.bottom)?.offset()(80)
+                    make?.left.equalTo()(self)?.offset()(10)
+                    make?.width.equalTo()(self)?.offset()(-20)
+                    make?.height.mas_equalTo()(260)
+                }
                 self.picV.layoutIfNeeded()
                 self.topCommentTableV = UITableView(frame: CGRect(x: 10, y:picV.frame.maxY+10, width: screen_width-20, height: self.topic.commentVH+32),style:.plain)
                 self.topCommentTableV.delegate = self
@@ -177,7 +198,21 @@ class TGTopicNewCell: UITableViewCell {
     }
    
 }
-extension TGTopicNewCell:UITableViewDelegate,UITableViewDataSource {
+extension TGTopicNewCell:UITableViewDelegate,UITableViewDataSource,SDPhotoBrowserDelegate {
+    //MARK:- 图片delegate
+    func photoBrowser(_ browser: SDPhotoBrowser!, placeholderImageFor index: Int) -> UIImage! {
+        return nil
+    }
+    func photoBrowser(_ browser: SDPhotoBrowser!, highQualityImageURLFor index: Int) -> URL! {
+        if topic.type.lowercased() == "image" {
+            return URL(string: self.topic.image)
+        }
+        else
+        {
+            return URL(string:self.topic.gif_thumbnail)
+        }
+    }
+    //
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

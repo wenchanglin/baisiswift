@@ -18,10 +18,23 @@ class pinglunCell: TGTopicNewCell {
                 nameLabel.text = topic.u.name
                 commentLabel.text = topic.text
                 passtimeLabel.text = topic.passtime
-                self.picV = TGPicNewV()
-                self.picV.tgtopPicModel = topic
+                self.picV = AsyncImageView()
+                AsyncImageLoader.shared().cancelLoadingImages(forTarget: picV)
+                picV.imageURL = URL(string:self.topic.image)
+                picV.layer.cornerRadius = 5
+                picV.layer.borderWidth = 2
+                picV.contentMode = .scaleAspectFill
+                picV.layer.masksToBounds = true
+                picV.layer.borderColor = UIColor.darkGray.cgColor
+                picV.isUserInteractionEnabled = true
+                picV.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(TGTopicNewCell.seeBigPic)))
                 self.contentView.addSubview(picV)
-                self.picV.frame = self.topic.middleFrame
+                picV.mas_makeConstraints { [weak self](make) in
+                    make?.top.equalTo()(self?.commentLabel.bottom)?.offset()(80)
+                    make?.left.equalTo()(self)?.offset()(10)
+                    make?.width.equalTo()(self)?.offset()(-20)
+                    make?.height.mas_equalTo()(260)
+                }
                 self.picV.layoutIfNeeded()
                 self.topCommentTableV.removeFromSuperview()
                 var nameArray = [String]()

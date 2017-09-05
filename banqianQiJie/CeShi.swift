@@ -140,7 +140,7 @@ extension CeShi:UITableViewDelegate,UITableViewDataSource
         {
         tableView.rowHeight = cell.cellHeight + textSize.height + 5
         }
-        else if(model.type == "video")
+        else if(model.type == "video" || model.type == "voice")
         {
         tableView.rowHeight = cell.cellHeight + textSize.height
         }

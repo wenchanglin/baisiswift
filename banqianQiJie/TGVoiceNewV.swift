@@ -108,7 +108,8 @@ class TGVoiceNewV: UIView {
             make?.bottom.equalTo()(self?.imageV.mas_bottom)?.offset()(-10)
         }
         voicePlayBtn = UIButton()
-        voicePlayBtn.addTarget(self, action: #selector(TGVoiceNewV.play(playBtn:)), for: .touchUpInside)
+        voicePlayBtn.isHidden = true
+        //voicePlayBtn.addTarget(self, action: #selector(TGVoiceNewV.play(playBtn:)), for: .touchUpInside)
         voicePlayBtn.setImage(UIImage(named:"playButtonPlay"), for: .normal)
         imageV.addSubview(voicePlayBtn)
         voicePlayBtn.mas_makeConstraints { [weak self](make) in
@@ -128,15 +129,24 @@ class TGVoiceNewV: UIView {
              progress.frame = CGRect(x:voicePlayBtn.frame.origin.x-2,y:voicePlayBtn.frame.origin.y-2,width:voicePlayBtn.frame.size.width+4,height:voicePlayBtn.frame.size.height+4);
             self.insertSubview(progress, belowSubview: self.voicePlayBtn)
             progress.setProgress(0, animated: false)
+            if voice_player.status == .readyToPlay
+            {
             voice_player.play()
+            }
+            else
+            {
+            voice_player.pause()
+            }
             avTimer.fireDate = Date()
             self.topVoiceModel.is_voicePlaying = true
+            voicePlayBtn.isHidden = false
             voicePlayBtn.setImage(UIImage(named:"playButtonPause"), for: .normal)
         }
         else
         {
             if lastTopicM.is_voicePlaying
             {
+                voicePlayBtn.isHidden = false
                 voice_player.pause()
                 avTimer.fireDate = NSDate.distantFuture
                 self.topVoiceModel.is_voicePlaying = false
@@ -147,7 +157,14 @@ class TGVoiceNewV: UIView {
              NotificationCenter.default.addObserver(self, selector: #selector(TGVoiceNewV.playerItemDidReachEnd(playerItem:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self.playerItem)
                 progress.frame = CGRect(x:voicePlayBtn.frame.origin.x-2,y:voicePlayBtn.frame.origin.y-2,width:voicePlayBtn.frame.size.width+4,height:voicePlayBtn.frame.size.height+4);
                 self.insertSubview(progress, belowSubview: self.voicePlayBtn)
-                voice_player.play()
+                if voice_player.status == .readyToPlay
+                {
+                    voice_player.play()
+                }
+                else
+                {
+                    voice_player.pause()
+                }
                 avTimer.fireDate = Date()
                 self.topVoiceModel.is_voicePlaying = true
                 playBtn.setImage(UIImage(named:"playButtonPause"), for: .normal)
@@ -180,9 +197,7 @@ class TGVoiceNewV: UIView {
 
     func seeBigPic()
     {
-        let vc = TGSeeBigPicNewVC()
-        vc.topic = self.topVoiceModel
-        UIApplication.shared.keyWindow?.rootViewController?.present(vc, animated: true, completion: nil)
+        play(playBtn: voicePlayBtn)
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

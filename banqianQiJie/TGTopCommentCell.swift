@@ -61,8 +61,8 @@ class TGTopCommentCell: UITableViewCell {
                 voiceBtn = UIButton()
                 self.contentView.addSubview(voiceBtn)
                 voiceBtn.mas_makeConstraints({ [weak self](make) in
-                    make?.left.equalTo()(self?.iconImageV.mas_right)?.offset()(5)
-                    make?.centerY.equalTo()(self?.iconImageV)
+                    make?.left.equalTo()(self?.userLabel.mas_right)?.offset()(5)
+                    make?.centerY.equalTo()(self?.userLabel)
                 })
                 voiceBtn.setTitle("\(commentM.voicetime)", for: .normal)
                 setBtn(btn: self.voiceBtn, isPlay: commentM.is_voicePlaying)
@@ -95,16 +95,16 @@ class TGTopCommentCell: UITableViewCell {
     func voicePlay(sender:UIButton)
     {
         sender.isSelected = !sender.isSelected
-        lastBtn.isSelected = !lastBtn.isSelected
+       // lastBtn.isSelected = !lastBtn.isSelected
         if lastCommentM != self.commentM {
             NotificationCenter.default.removeObserver(self, name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self.playerItem)
             self.playerItem = AVPlayerItem(url: URL(string: self.commentM.voiceuri)!)
             NotificationCenter.default.addObserver(self, selector: #selector(TGTopCommentCell.playerItemDidReachEnd(playItem:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self.playerItem)
-            commentPlayer.replaceCurrentItem(with: self.playerItem)
+            commentPlayer = AVPlayer(playerItem: self.playerItem)// .replaceCurrentItem(with: self.playerItem)
             commentPlayer.play()
-            lastCommentM.is_voicePlaying = false
+           // lastCommentM.is_voicePlaying = false
             self.commentM.is_voicePlaying = true
-            setBtn(btn: lastBtn, isPlay: lastCommentM.is_voicePlaying)
+           // setBtn(btn: lastBtn, isPlay: lastCommentM.is_voicePlaying)
             setBtn(btn: sender, isPlay: self.commentM.is_voicePlaying)
         }
         else

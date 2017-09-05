@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FLAnimatedImage
 import SVProgressHUD
 class QQTableViewCell: UITableViewCell {
     var namePic:AsyncImageView!
@@ -16,7 +15,8 @@ class QQTableViewCell: UITableViewCell {
     var commentLabel:UILabel!
     var moreBtn:UIButton!
     var imageV:AsyncImageView!
-    var gifV:YFGIFImageView!
+//    var gifV:YFGIFImageView!
+    var gifV:YYAnimatedImageView!
     var gifButton:UIButton!
     var gifes:UIImageView!
     var topCommentTableV:UITableView!
@@ -32,12 +32,17 @@ class QQTableViewCell: UITableViewCell {
     var clickedOpenCellCallback: ((_ cell: QQTableViewCell) -> Void)? = nil
     var clickedCloseCellCallback: ((_ cell: QQTableViewCell) -> Void)? = nil
     var cellHeight:CGFloat!
-    func playGIF()
+//    func playGIF()
+//    {
+//        gifButton.isHidden = true
+//        gifV.isHidden = false
+//        gifV.gifData = NSData(contentsOf: URL(string:self.ceshiModel.images_gif)!)! as Data
+//        gifV.startGIF()
+//    }
+    func delayAction()
     {
-        gifButton.isHidden = true
         gifV.isHidden = false
-        gifV.gifData = NSData(contentsOf: URL(string:self.ceshiModel.images_gif)!)! as Data
-        gifV.startGIF()
+        gifV.yy_setImage(with: URL(string:self.ceshiModel.images_gif), placeholder: nil, options: .progressiveBlur, progress: nil, transform: nil, completion: nil)
     }
     var ceshiModel:ceShiModel!
     {
@@ -97,7 +102,6 @@ class QQTableViewCell: UITableViewCell {
             else if (self.ceshiModel.type.lowercased() == "gif")
             {
                 
-                gifButton.isHidden = false
                 gifes.isHidden = false
                 commentLabel.mas_remakeConstraints({ (make) in
                     make?.top.equalTo()(self.namePic.mas_bottom)?.offset()(5)
@@ -116,6 +120,7 @@ class QQTableViewCell: UITableViewCell {
                     make?.width.equalTo()(self)?.offset()(-20)
                     make?.height.mas_equalTo()(260)
                 })
+                delayAction()
                 if ceshiModel.top_comments != nil
                 {
                 topCommentTableV = UITableView(frame: CGRect(x:0.0,y:270+textSize.height+40,width:screen_width,height:CGFloat( 30*ceshiModel.top_comments.count)+30), style: .plain)
@@ -144,7 +149,7 @@ class QQTableViewCell: UITableViewCell {
                 cellHeight = namePic.frame.size.height + commentLabel.frame.size.height + imageV.frame.size.height + 15
                 }
             }
-            printLog(message: ceshiModel.type)
+//            printLog(message: ceshiModel.type)
             if (self.ceshiModel.type.lowercased() == "audio")// 声音
             {
                 imageV.isHidden = true
@@ -157,7 +162,7 @@ class QQTableViewCell: UITableViewCell {
                 self.voiceV.topVoiceModel = ceshiModel
                 self.contentView.addSubview(voiceV)
                 self.voiceV.frame = self.ceshiModel.middleFrame
-                
+                cellHeight = namePic.frame.size.height + commentLabel.frame.size.height + imageV.frame.size.height + 15
             }
             else if (self.ceshiModel.type.lowercased() == "video") // 视频
             {
@@ -193,7 +198,7 @@ class QQTableViewCell: UITableViewCell {
                     let nameArray = ["顶\(ceshiModel.up)","踩\(ceshiModel.down)","转发\(ceshiModel.forward)","评论\(ceshiModel.comment)"]
                     let imageArray = ["timeline_icon_unlike","icon_unlike_normal","timeline_icon_retweet","timeline_icon_comment"]
                     for i in 0...nameArray.count-1 {
-                        let button = UIButton(frame: CGRect(x: CGFloat(i) * (screen_width/4), y: 270+textSize.height+20, width: screen_width/4, height: 30))
+                        let button = UIButton(frame: CGRect(x: CGFloat(i) * (screen_width/4), y: 270+textSize.height+20, width: screen_width/4-10, height: 30))
                         button.tag = i+1000
                         button .setTitle(nameArray[i], for: .normal)
                         button.setTitleColor(UIColor.darkGray, for: .normal)
@@ -215,7 +220,7 @@ class QQTableViewCell: UITableViewCell {
                 imageV.isHidden = true
                 if ceshiModel.top_comments != nil
                 {
-                    topCommentTableV = UITableView(frame: CGRect(x:0.0,y:textSize.height+48,width:screen_width,height:CGFloat( 30*ceshiModel.top_comments.count)+30), style: .plain)
+                    topCommentTableV = UITableView(frame: CGRect(x:0.0,y:textSize.height+50,width:screen_width,height:CGFloat( 30*ceshiModel.top_comments.count)+30), style: .plain)
                     //topCommentTableV.backgroundColor = UIColor.cyan
                     self.topCommentTableV.delegate = self
                     self.topCommentTableV.isScrollEnabled = false
@@ -229,7 +234,7 @@ class QQTableViewCell: UITableViewCell {
                     let nameArray = ["顶\(ceshiModel.up)","踩\(ceshiModel.down)","转发\(ceshiModel.forward)","评论\(ceshiModel.comment)"]
                     let imageArray = ["timeline_icon_unlike","icon_unlike_normal","timeline_icon_retweet","timeline_icon_comment"]
                     for i in 0...nameArray.count-1 {
-                        let button = UIButton(frame: CGRect(x: CGFloat(i) * (screen_width/4), y: textSize.height+48, width: screen_width/4, height: 30))
+                        let button = UIButton(frame: CGRect(x: CGFloat(i) * (screen_width/4), y: textSize.height+50, width: screen_width/4, height: 30))
                         button.tag = i+1000
                         button .setTitle(nameArray[i], for: .normal)
                         button.setTitleColor(UIColor.darkGray, for: .normal)
@@ -371,15 +376,9 @@ class QQTableViewCell: UITableViewCell {
             make?.width.equalTo()(self)?.offset()(-20)
             make?.height.mas_equalTo()(260)
         }
-        gifes = UIImageView(image: UIImage(named: "common-gif"))
-        gifes.isHidden = true
-        self.contentView.addSubview(gifes)
-        gifes.mas_makeConstraints { [weak self](make) in
-            make?.left.equalTo()(self?.imageV)?.offset()(0)
-            make?.top.equalTo()(self?.imageV)?.offset()(0)
-            make?.width.and().height().mas_equalTo()(30)
-        }
-        gifV = YFGIFImageView()
+        gifV = YYAnimatedImageView()
+        gifV.contentMode = .scaleAspectFill
+        gifV.clipsToBounds = true
         gifV.isHidden = true
         self.contentView.addSubview(gifV)
         gifV.mas_makeConstraints { [weak self](make) in
@@ -388,16 +387,28 @@ class QQTableViewCell: UITableViewCell {
             make?.width.equalTo()(self)?.offset()(-20)
             make?.height.mas_equalTo()(260)
         }
-        gifButton = UIButton()
-        gifButton.setImage(#imageLiteral(resourceName: "voice-play-start-click"), for: .normal)
-        gifButton.addTarget(self, action: #selector(QQTableViewCell.playGIF), for: .touchUpInside)
-        gifButton.isHidden = true
-        self.contentView.addSubview(gifButton)
-        gifButton.mas_makeConstraints { (make) in
-            make?.centerX.equalTo()(self.imageV)
-            make?.centerY.equalTo()(self.imageV)
+        gifes = UIImageView(image: UIImage(named: "common-gif"))
+        gifes.isHidden = true
+        //self.contentView.insertSubview(gifes, belowSubview: gifV)
+        self.contentView.addSubview(gifes)
+        gifes.mas_makeConstraints { [weak self](make) in
+            make?.left.equalTo()(self?.imageV)?.offset()(0)
+            make?.top.equalTo()(self?.imageV)?.offset()(0)
             make?.width.and().height().mas_equalTo()(30)
         }
+       
+       
+        
+//        gifButton = UIButton()
+//        gifButton.setImage(#imageLiteral(resourceName: "voice-play-start-click"), for: .normal)
+//        gifButton.addTarget(self, action: #selector(QQTableViewCell.playGIF), for: .touchUpInside)
+//        gifButton.isHidden = true
+//        self.contentView.addSubview(gifButton)
+//        gifButton.mas_makeConstraints { (make) in
+//            make?.centerX.equalTo()(self.imageV)
+//            make?.centerY.equalTo()(self.imageV)
+//            make?.width.and().height().mas_equalTo()(30)
+//        }
         namePic.layoutIfNeeded()
         commentLabel.layoutIfNeeded()
         imageV.layoutIfNeeded()
@@ -442,7 +453,7 @@ extension QQTableViewCell:SDPhotoBrowserDelegate,UITableViewDataSource,UITableVi
         let textSizes = CGSize(width:screen_width-40,height:CGFloat(MAXFLOAT));
         let textSize:CGSize = ceshiModel.top_comments[indexPath.row].content.boundingRect(with: textSizes, options: .usesLineFragmentOrigin, attributes: [
             NSFontAttributeName : UIFont.systemFont(ofSize: 10)], context: nil).size
-        return textSize.height + 17
+        return textSize.height + 10
     }
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let view = UIView(frame:CGRect(x: 0, y: 0, width: screen_width, height: 30))

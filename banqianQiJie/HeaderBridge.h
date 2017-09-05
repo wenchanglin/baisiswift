@@ -27,13 +27,11 @@
 #import "TGTopicNewM.h"
 #import "TGTopicM.h"
 #import "TGUserNewM.h"
-#import "TGSeeBigPicNewVC.h"
 #import "UIImageView+download.h"
 #import "TGCommentNewM.h"
 #import "UIView+frame.h"
 #import "TGLayout.h"
 #import "TGRefresh.h"
-#import <FLAnimatedImage/FLAnimatedImageView.h>
 #import <Masonry/Masonry.h>
 #import "YYFPSLabel.h"
 #import "AsyncImageView.h"
@@ -41,5 +39,6 @@
 #import "SDPhotoBrowser.h"
 #import "YFGIFImageView.h"
 #import "WMPlayer.h"
-
+#import <YYWebImage/YYWebImage.h>
+#import "LXCircle.h"
 #endif /* HeaderBridge_h */

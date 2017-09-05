@@ -14,11 +14,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>FLAnimatedImage.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>MJExtension.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -54,6 +49,21 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>YYCache.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>YYImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>YYWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>pop.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,17 +72,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>02243D25696BD3D631A28082985FFD71</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>17CEAD1B3EC4E80098DF5F8AA00BE966</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>29DE77A72E905BF4110BB9DFA5EA4531</key>
+		<key>30E1F5DD72989EBE9181F0FB4DF325E7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3F965674AA3DA11EB06A3A95F93B1D99</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,22 +92,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7945A72F5283B97DDF387B8F2942571E</key>
+		<key>8DF1A1924FDF398B38CF1A7ECC080176</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>83B0EEB7F535C37C3BBB9D83A7FC181A</key>
+		<key>A5D3CF44CECE1FE448DA68A039FDC8F6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>83B5B60C676A8D31829A6AE91CE86A75</key>
+		<key>AC1BFF8084EC397077B3A266C4B8F126</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8946422B5FA9C2E6B3EEA829D43959B0</key>
+		<key>AFF995690CE4B1A0C86EFD69A82366A9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B4F21539FA55E568B68E3E359CC7D573</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -113,6 +128,11 @@
 			<true/>
 		</dict>
 		<key>E14A62900910444707A5504D25EC98DC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F3702D0290CE5EE5F63B1330BFA58D6E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

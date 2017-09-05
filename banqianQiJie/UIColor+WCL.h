@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UIColor (WCL)
-
++(UIColor *) hexStringToColor: (NSString *) stringToConvert;
++(UIColor *) hexStringToColor: (NSString *) stringToConvert andAlpha:(CGFloat)alpha;
 @end
